@@ -23,15 +23,9 @@ interface Feature {
 // - alt: The alt text of the image (if type is 'image')
 const features = [
   {
-<<<<<<< HEAD
-    title: "Emails",
-    description:
-      "Send transactional emails, setup your DNS to avoid spam folder (DKIM, DMARC, SPF in subdomain), and listen to webhook to receive & forward emails",
-=======
     title: "Flexible Data Input",
     description:
       "Upload feedback from spreadsheets or paste text directly.",
->>>>>>> supabase
     type: "video",
     path: "https://d3m8mk7e1mf7xn.cloudfront.net/app/newsletter.webm",
     format: "video/webm",

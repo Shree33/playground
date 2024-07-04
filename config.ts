@@ -8,7 +8,7 @@ const config = {
   appDescription:
     "Maximize your business potential by transforming unstructured user feedback into actionable insights with our cutting-edge AI-powered feedback analysis tool. Perfect for product managers, customer support teams, and business analysts, our application streamlines the process of tagging, categorizing, and analyzing feedback data, saving you time and boosting accuracy.",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)
-  domainName: "shipfa.st",
+  domainName: "autot.ag",
   crisp: {
     // Crisp website ID. IF YOU DON'T USE CRISP: just remove this => Then add a support email in this config file (mailgun.supportEmail) otherwise customer support won't work.
     id: "",
