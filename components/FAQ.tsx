@@ -13,15 +13,14 @@ interface FAQItemProps {
 
 const faqList: FAQItemProps[] = [
   {
-    question: "What do I get exactly?",
-    answer: <div className="space-y-2 leading-relaxed">Loreum Ipseum</div>,
+    question: "How does the AI categorize feedback? ",
+    answer: <div className="space-y-2 leading-relaxed">Our AI uses advanced NLP models to analyze the context and sentiment of feedback, assigning relevant tags and categories based on your specified criteria.    </div>,
   },
   {
-    question: "Can I get a refund?",
+    question: "Is my data secure?",
     answer: (
       <p>
-        Yes! You can request a refund within 7 days of your purchase. Reach out
-        by email.
+        Absolutely. We use encryption for data at rest and in transit, and comply with major data protection regulations like GDPR and CCPA.
       </p>
     ),
   },

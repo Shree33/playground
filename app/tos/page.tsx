@@ -59,37 +59,33 @@ const TOS = () => {
         >
           {`Last Updated: September 26, 2023
 
-Welcome to ShipFast!
+Effective Date: July 4, 2024
 
-These Terms of Service ("Terms") govern your use of the ShipFast website at https://shipfa.st ("Website") and the services provided by ShipFast. By using our Website and services, you agree to these Terms.
+1. Acceptance of Terms
+By accessing and using https://autot.ag ("AutoTag"), you agree to comply with and be bound by these Terms of Service.
 
-1. Description of ShipFast
+2. Description of Service
+AutoTag is a tool designed to transform feedback into categorized, prioritized, and actionable insights.
 
-ShipFast is a platform that offers a JavaScript code boilerplate to assist entrepreneurs in launching their startups more efficiently.
+3. User Data
+Ownership: All data uploaded by the user remains the property of the user.
+Data Collected: We collect user name, email, payment information, and user-uploaded data.
+Non-personal Data: We collect non-personal data through web cookies.
+4. Privacy Policy
+Please refer to our Privacy Policy at https://autot.ag/privacy-policy for details on how we handle user data.
 
-2. Ownership and Usage Rights
+5. Contact Information
+For any questions or concerns, contact us at shree@autot.ag.
 
-When you purchase a package from ShipFast, you gain the right to download and use the code provided for creating applications. You own the code you create but do not have the right to resell it. We offer a full refund within 7 days of purchase, as specified in our refund policy.
+6. Governing Law
+These Terms of Service are governed by the laws of the United States.
 
-3. User Data and Privacy
+7. Updates to Terms
+We may update these Terms of Service from time to time. Users will be notified of any changes via email.
 
-We collect and store user data, including name, email, and payment information, as necessary to provide our services. For details on how we handle your data, please refer to our Privacy Policy at https://shipfa.st/privacy-policy.
+By using AutoTag, you acknowledge that you have read and agree to these Terms of Service.
 
-4. Non-Personal Data Collection
-
-We use web cookies to collect non-personal data for the purpose of improving our services and user experience.
-
-5. Governing Law
-
-These Terms are governed by the laws of France.
-
-6. Updates to the Terms
-
-We may update these Terms from time to time. Users will be notified of any changes via email.
-
-For any questions or concerns regarding these Terms of Service, please contact us at marc@shipfa.st.
-
-Thank you for using ShipFast!`}
+Thank you for using AutoTag!`}
         </pre>
       </div>
     </main>

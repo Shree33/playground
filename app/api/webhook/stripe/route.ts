@@ -1,9 +1,8 @@
 import { NextResponse, NextRequest } from "next/server";
 import { headers } from "next/headers";
 import Stripe from "stripe";
-import connectMongo from "@/libs/mongoose";
+import { SupabaseClient } from "@supabase/supabase-js";
 import configFile from "@/config";
-import User from "@/models/User";
 import { findCheckoutSession } from "@/libs/stripe";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
@@ -17,14 +16,18 @@ const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 // By default, it'll store the user in the database
 // See more: https://shipfa.st/docs/features/payments
 export async function POST(req: NextRequest) {
-  await connectMongo();
-
   const body = await req.text();
 
   const signature = headers().get("stripe-signature");
 
   let eventType;
   let event;
+
+  // Create a private supabase client using the secret service_role API key
+  const supabase = new SupabaseClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.SUPABASE_SERVICE_ROLE_KEY
+  );
 
   // verify Stripe event is legit
   try {
@@ -53,6 +56,7 @@ export async function POST(req: NextRequest) {
 
         if (!plan) break;
 
+<<<<<<< HEAD
         const customer = (await stripe.customers.retrieve(
           customerId as string
         )) as Stripe.Customer;
@@ -83,6 +87,17 @@ export async function POST(req: NextRequest) {
         user.customerId = customerId;
         user.hasAccess = true;
         await user.save();
+=======
+        // Update the profile where id equals the userId (in table called 'profiles') and update the customer_id, price_id, and has_access (provisioning)
+        await supabase
+          .from("profiles")
+          .update({
+            customer_id: customerId,
+            price_id: priceId,
+            has_access: true,
+          })
+          .eq("id", userId);
+>>>>>>> supabase
 
         // Extra: send email with user link, product page, etc...
         // try {
@@ -112,6 +127,7 @@ export async function POST(req: NextRequest) {
         // ❌ Revoke access to the product
         const stripeObject: Stripe.Subscription = event.data
           .object as Stripe.Subscription;
+<<<<<<< HEAD
 
         const subscription = await stripe.subscriptions.retrieve(
           stripeObject.id
@@ -122,12 +138,23 @@ export async function POST(req: NextRequest) {
         user.hasAccess = false;
         await user.save();
 
+=======
+        const subscription = await stripe.subscriptions.retrieve(
+          stripeObject.id
+        );
+
+        await supabase
+          .from("profiles")
+          .update({ has_access: false })
+          .eq("customer_id", subscription.customer);
+>>>>>>> supabase
         break;
       }
 
       case "invoice.paid": {
         // Customer just paid an invoice (for instance, a recurring payment for a subscription)
         // ✅ Grant access to the product
+<<<<<<< HEAD
 
         const stripeObject: Stripe.Invoice = event.data
           .object as Stripe.Invoice;
@@ -143,6 +170,28 @@ export async function POST(req: NextRequest) {
         // Grant user access to your product. It's a boolean in the database, but could be a number of credits, etc...
         user.hasAccess = true;
         await user.save();
+=======
+        const stripeObject: Stripe.Invoice = event.data
+          .object as Stripe.Invoice;
+        const priceId = stripeObject.lines.data[0].price.id;
+        const customerId = stripeObject.customer;
+
+        // Find profile where customer_id equals the customerId (in table called 'profiles')
+        const { data: profile } = await supabase
+          .from("profiles")
+          .select("*")
+          .eq("customer_id", customerId)
+          .single();
+
+        // Make sure the invoice is for the same plan (priceId) the user subscribed to
+        if (profile.price_id !== priceId) break;
+
+        // Grant the profile access to your product. It's a boolean in the database, but could be a number of credits, etc...
+        await supabase
+          .from("profiles")
+          .update({ has_access: true })
+          .eq("customer_id", customerId);
+>>>>>>> supabase
 
         break;
       }

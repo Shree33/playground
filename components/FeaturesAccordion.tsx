@@ -23,9 +23,15 @@ interface Feature {
 // - alt: The alt text of the image (if type is 'image')
 const features = [
   {
+<<<<<<< HEAD
     title: "Emails",
     description:
       "Send transactional emails, setup your DNS to avoid spam folder (DKIM, DMARC, SPF in subdomain), and listen to webhook to receive & forward emails",
+=======
+    title: "Flexible Data Input",
+    description:
+      "Upload feedback from spreadsheets or paste text directly.",
+>>>>>>> supabase
     type: "video",
     path: "https://d3m8mk7e1mf7xn.cloudfront.net/app/newsletter.webm",
     format: "video/webm",
@@ -46,9 +52,15 @@ const features = [
     ),
   },
   {
+<<<<<<< HEAD
     title: "Payments",
     description:
       "Create checkout sessions, handle webhooks to update user's account (subscriptions, one-time payments...) and tips to setup your account & reduce chargebacks",
+=======
+    title: "Automatic Tagging and Categorization",
+    description:
+      "Let our advanced NLP models do the heavy lifting.",
+>>>>>>> supabase
     type: "image",
     path: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
     alt: "A computer",
@@ -70,9 +82,15 @@ const features = [
     ),
   },
   {
+<<<<<<< HEAD
     title: "Authentication",
     description:
       "Magic links setup, login with Google walkthrough, save user in MongoDB/Supabase, private/protected pages & API calls",
+=======
+    title: "Customize And Adjust",
+    description:
+      "Define and manage tags and categories to fit your needs. Review AI-generated tags and make adjustments easily.",
+>>>>>>> supabase
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -91,9 +109,15 @@ const features = [
     ),
   },
   {
+<<<<<<< HEAD
     title: "Style",
     description:
       "Components, animations & sections (like this features section), 20+ themes with daisyUI, automatic dark mode",
+=======
+    title: "Data Security and Privacy",
+    description:
+      "Your data is safe with us, thanks to robust encryption and compliance with data protection regulations.",
+>>>>>>> supabase
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
