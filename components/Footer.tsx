@@ -57,17 +57,10 @@ const Footer = () => {
                 <Link href="/#pricing" className="link link-hover">
                   Pricing
                 </Link>
-<<<<<<< HEAD
                 <Link href="/blog" className="link link-hover">
                   Blog
                 </Link>
                 <a href="/#" target="_blank" className="link link-hover">
-=======
-                {/* <Link href="/blog" className="link link-hover">
-                  Blog
-                </Link> */}
-                {/* <a href="/#" target="_blank" className="link link-hover">
->>>>>>> supabase
                   Affiliates
                 </a> */}
               </div>
