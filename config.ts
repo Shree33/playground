@@ -3,12 +3,12 @@ import { ConfigProps } from "./types/config";
 
 const config = {
   // REQUIRED
-  appName: "AutoTag",
+  appName: "UserFeed",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription:
     "Maximize your business potential by transforming unstructured user feedback into actionable insights with our cutting-edge AI-powered feedback analysis tool. Perfect for product managers, customer support teams, and business analysts, our application streamlines the process of tagging, categorizing, and analyzing feedback data, saving you time and boosting accuracy.",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)
-  domainName: "autot.ag",
+  domainName: "userfeed.app",
   crisp: {
     // Crisp website ID. IF YOU DON'T USE CRISP: just remove this => Then add a support email in this config file (mailgun.supportEmail) otherwise customer support won't work.
     id: "",
@@ -27,7 +27,7 @@ const config = {
         //  REQUIRED - Name of the plan, displayed on the pricing page
         name: "Free",
         // A friendly description of the plan, displayed on the pricing page. Tip: explain why this plan and not others
-        description: "Perfect to give AutoTag a try",
+        description: "Perfect to give UserFeed a try",
         // The price you want to display, the one user will be charged on Stripe.
         price: 0,
         // If you have an anchor price (i.e. $29) that you want to display crossed out, put it here. Otherwise, leave it empty
@@ -47,7 +47,7 @@ const config = {
         // This plan will look different on the pricing page, it will be highlighted. You can only have one plan with isFeatured: true
         isFeatured: true,
         name: "Advanced",
-        description: "Get into the flow with AutoTag",
+        description: "Get into the flow with UserFeed",
         price: 30,
         // priceAnchor: 299,
         features: [
@@ -71,11 +71,11 @@ const config = {
     // subdomain to use when sending emails, if you don't have a subdomain, just remove it. Highly recommended to have one (i.e. mg.yourdomain.com or mail.yourdomain.com)
     subdomain: "mg",
     // REQUIRED — Email 'From' field to be used when sending magic login links
-    fromNoReply: `AutoTag <noreply@autot.ag>`,
+    fromNoReply: `UserFeed <noreply@userfeed.app>`,
     // REQUIRED — Email 'From' field to be used when sending other emails, like abandoned carts, updates etc..
-    fromAdmin: `Shree at AutoTag <shree@autot.ag>`,
+    fromAdmin: `Shree at UserFeed <shree@userfeed.app>`,
     // Email shown to customer if need support. Leave empty if not needed => if empty, set up Crisp above, otherwise you won't be able to offer customer support."
-    supportEmail: "shree@mg.AutoT.ag",
+    supportEmail: "shree@mg.userfeed.app",
     // When someone replies to supportEmail sent by the app, forward it to the email below (otherwise it's lost). If you set supportEmail to empty, this will be ignored.
     forwardRepliesTo: "skbhanderi3@gmail.com",
   },
