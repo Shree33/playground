@@ -38,7 +38,7 @@ export default function Dashboard() {
   const [response, setResponse] = useState('');
 
   // Step 2: Event handler for submit
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault(); // Prevent default form submission behavior
     const aiResponse = await sendOpenAi([{role:'user', content:prompt}], 123); // Assuming sendOpenAi returns a promise
     setResponse(aiResponse); // Update state with the response

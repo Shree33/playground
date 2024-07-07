@@ -2,13 +2,13 @@ require('dotenv').config(); // Load environment variables
 
 import axios from 'axios';
 
-export const sendOpenAi = async (messages, userId, max = 100, temp = 1) => {
+export const sendOpenAi = async (messages:any, userId:number, max = 100, temp = 1) => {
   const url = 'https://api.openai.com/v1/chat/completions';
 
   console.log("OpenAI API Key:", process.env.OPENAI_API_KEY); // Verify the key is loaded
 
   console.log('Ask GPT >>>', process.env.OPENAI_API_KEY,'checking bases');
-  messages.map((m) => console.log(' - ' + m.role.toUpperCase() + ': ' + m.content));
+  messages.map((m: { role: string; content: string; }) => console.log(' - ' + m.role.toUpperCase() + ': ' + m.content));
 
   const body = {
     model: 'gpt-3.5-turbo',
